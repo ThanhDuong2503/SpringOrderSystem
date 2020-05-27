@@ -4,10 +4,7 @@ import de.neuefische.springordersystem.db.ProductDb;
 import de.neuefische.springordersystem.model.Product;
 import de.neuefische.springordersystem.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -24,7 +21,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public ArrayList<Product> listProducts(){
+    public ArrayList<Product> listProducts() {
         return productService.listProducts();
     }
 
@@ -33,5 +30,8 @@ public class ProductController {
         return productService.getProducts(id);
     }
 
-
+    @GetMapping("search")
+    public ArrayList<Product> searchProductByName(@RequestParam(name = "q", required = false) String query) {
+        return productService.searchProductByName(query);
+    }
 }

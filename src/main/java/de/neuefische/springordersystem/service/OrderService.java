@@ -28,10 +28,6 @@ public class OrderService {
         this.productDb = productDb;
     }
 
-//    public void addOrder(Order order) {
-//        orderDb.addOrder(order);
-//    }
-
     public ArrayList<Order> listOrders() {
         return orderDb.listOrders();
     }

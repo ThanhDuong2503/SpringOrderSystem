@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("orders")
@@ -26,15 +24,11 @@ public class OrderController {
         return orderService.listOrders();
     }
 
-//    @PutMapping
-//    public Order addOrder(@RequestBody Order order) {
-//        orderService.addOrder(order);
-//        return order;
-//    }
 
     @PutMapping
     public Order orderProducts(@RequestBody ArrayList<String> productIdsToOrder){
         return orderService.orderProducts(productIdsToOrder);
     }
+
 
 }
