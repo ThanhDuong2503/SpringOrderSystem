@@ -6,6 +6,7 @@ import de.neuefische.springordersystem.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,7 @@ public class ProductService {
         this.productDb = productDb;
     }
 
-    public List<Product> listProducts(){
+    public ArrayList<Product> listProducts(){
         return productDb.listProducts();
     }
 

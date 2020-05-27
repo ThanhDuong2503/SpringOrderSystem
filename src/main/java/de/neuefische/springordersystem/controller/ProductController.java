@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Optional;
 
 @RestController
@@ -24,7 +24,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> listProducts(){
+    public ArrayList<Product> listProducts(){
         return productService.listProducts();
     }
 

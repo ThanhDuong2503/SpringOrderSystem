@@ -23,11 +23,7 @@ public class ProductDb {
     ));
 
 
-    public ProductDb(List<Product> initialProducts){
-        this.products.addAll(initialProducts);
-    }
-
-    public List<Product> listProducts(){
+    public ArrayList<Product> listProducts(){
         return products;
     }
 
@@ -40,11 +36,4 @@ public class ProductDb {
         return Optional.empty();
     }
 
-    public static void printProducts(ProductDb db) {
-        List<Product> products = db.listProducts();
-        System.out.println("Products:");
-        for (Product product : products) {
-            System.out.println(product);
-        }
-    }
 }
