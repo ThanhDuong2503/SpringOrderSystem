@@ -20,4 +20,7 @@ public class OrderDb {
     public void addOrder(Order newOrder) {
         this.orders.add(newOrder);
     }
+    public void clearDb(){
+        orders.clear();
+    }
 }

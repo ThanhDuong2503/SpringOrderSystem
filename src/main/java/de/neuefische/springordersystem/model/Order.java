@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -13,5 +12,5 @@ import java.util.List;
 
 public class Order {
     private String id;
-    private List<Product> products;
+    private ArrayList<Product> products;
 }

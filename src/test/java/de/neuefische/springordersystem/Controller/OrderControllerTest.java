@@ -2,9 +2,11 @@ package de.neuefische.springordersystem.Controller;
 
 import de.neuefische.springordersystem.controller.OrderController;
 import de.neuefische.springordersystem.controller.ProductController;
+import de.neuefische.springordersystem.db.OrderDb;
 import de.neuefische.springordersystem.model.Order;
 import de.neuefische.springordersystem.model.Product;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,6 +28,14 @@ class OrderControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
+
+    // resettet alle Daten vor jedem Test, damit sie sich nicht gegenseitig beeinflussen
+    @Autowired
+    private OrderDb orderDb;
+    @BeforeEach
+    public void resetData(){
+        orderDb.clearDb();
+    }
 
     @Test
     public void listOrdersShouldReturnAllOrders() {
