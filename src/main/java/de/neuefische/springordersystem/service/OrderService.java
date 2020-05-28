@@ -43,6 +43,7 @@ public class OrderService {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Product with id " + productId + " not found");
             }
         }
+        // generiert random id
         String uuid = UUID.randomUUID().toString();
         Order newOrder = new Order(uuid, products);
         orderDb.addOrder(newOrder);

@@ -44,12 +44,12 @@ class OrderControllerTest {
 
     @Test
     public void orderProductsShouldReturnOrderedProducts() {
-        // POST
+        // POST Process ; platziert order
         ArrayList<String> productId = new ArrayList<>();
         ResponseEntity<Order>postResponse = restTemplate.postForEntity("http://localhost:" + port + "/orders", productId, Order.class);
         assertEquals(HttpStatus.OK, postResponse.getStatusCode());
 
-        // WHEN
+        // WHEN Get Process; ruft geordete Order auf
         ResponseEntity<Order[]> response = restTemplate.getForEntity("http://localhost:" + port + "/orders", Order[].class);
         HttpStatus statusCode = response.getStatusCode();
         Order[] orders = response.getBody();
