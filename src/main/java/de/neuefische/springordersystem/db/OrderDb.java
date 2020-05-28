@@ -4,7 +4,6 @@ import de.neuefische.springordersystem.model.Order;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class OrderDb {

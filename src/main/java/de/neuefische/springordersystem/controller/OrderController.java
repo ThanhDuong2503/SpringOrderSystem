@@ -25,7 +25,7 @@ public class OrderController {
     }
 
 
-    @PutMapping
+    @PostMapping
     public Order orderProducts(@RequestBody ArrayList<String> productIdsToOrder){
         return orderService.orderProducts(productIdsToOrder);
     }
